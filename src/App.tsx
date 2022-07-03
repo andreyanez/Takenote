@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useLocalStorage } from './useLocalStorage';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, Link } from 'react-router-dom';
 import { NewNote } from './pages/NewNote';
 import { v4 as uuidV4 } from 'uuid';
 import { NoteLayout } from './layouts/NoteLayout';
@@ -36,6 +36,8 @@ export type Tag = {
 function App() {
 	const [notes, setNotes] = useLocalStorage<RawNote[]>('NOTES', []);
 	const [tags, setTags] = useLocalStorage<Tag[]>('TAGS', []);
+
+	const [editTagsModalIsOpen, setEditTagsModalIsOpen] = useState(false);
 
 	const notesWithTags = useMemo(() => {
 		return notes.map(note => {
@@ -90,7 +92,31 @@ function App() {
 	}
 
 	return (
-		<div>
+		<main>
+			<div className="title__container">
+				<div>
+					<h1 className="text-3xl font-bold">Takenote</h1>
+					<h2>Crea, guarda y revisa tus notas.</h2>
+				</div>
+				<div className="flex gap-2">
+					<Link to="/new">
+						<button
+							type="button"
+							className="inline-flex items-center px-6 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+						>
+							Crear Nota
+						</button>
+					</Link>
+					<button
+						type="button"
+						onClick={() => setEditTagsModalIsOpen(true)}
+						className="inline-flex items-center px-6 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+					>
+						Etiquetas
+					</button>
+				</div>
+			</div>
+
 			<Routes>
 				<Route
 					path="/"
@@ -116,7 +142,7 @@ function App() {
 				</Route>
 				<Route path="*" element={<Navigate to="/" />} />
 			</Routes>
-		</div>
+		</main>
 	);
 }
 

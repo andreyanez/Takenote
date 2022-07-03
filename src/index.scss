@@ -2,14 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+	--bezier: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 body {
 	min-height: 100vh;
+	@apply bg-primary;
 }
 
 main {
 	@apply container mx-auto max-w-6xl;
 }
 
+p {
+	@apply text-neutraltwo;
+}
+
 .react-select__control {
 	border-radius: inherit !important;
+}
+
+.note__card {
+	@apply col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200 hover:shadow-lg;
+	transition: var(--transition);
 }

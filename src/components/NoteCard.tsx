@@ -9,8 +9,8 @@ type SimplifiedNote = {
 
 export function NoteCard({ id, title, tags }: SimplifiedNote) {
 	return (
-		<Link to={`/${id}`} className="h-100 text-reset text-decoration-none">
-			<li key={id} className="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
+		<li key={id} className=" note__card">
+			<Link to={`/${id}`}>
 				<div className="w-full flex items-center justify-between p-6">
 					<div className="flex flex-col items-center gap-y-3 justify-center w-full">
 						<h3 className="text-gray-900 text-2xl font-medium truncate">{title}</h3>
@@ -28,7 +28,7 @@ export function NoteCard({ id, title, tags }: SimplifiedNote) {
 						)}
 					</div>
 				</div>
-			</li>
-		</Link>
+			</Link>
+		</li>
 	);
 }
