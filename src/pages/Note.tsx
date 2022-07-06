@@ -1,4 +1,3 @@
-import { Badge, Button, Col, Row, Stack } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useNote } from '../layouts/NoteLayout';
 import ReactMarkdown from 'react-markdown';
@@ -13,39 +12,38 @@ export function Note({ onDelete }: NoteProps) {
 
 	return (
 		<>
-			<Row className="align-items-center mb-4">
-				<Col>
+			<div className="align-items-center mb-4">
+				<div>
 					<h1>{note.title}</h1>
 					{note.tags.length > 0 && (
-						<Stack gap={1} direction="horizontal" className="flex-wrap">
+						<div className="flex-wrap">
 							{note.tags.map(tag => (
-								<Badge className="text-truncate" key={tag.id}>
+								<div className="text-truncate" key={tag.id}>
 									{tag.label}
-								</Badge>
+								</div>
 							))}
-						</Stack>
+						</div>
 					)}
-				</Col>
-				<Col xs="auto">
-					<Stack gap={2} direction="horizontal">
+				</div>
+				<div>
+					<div>
 						<Link to={`/${note.id}/edit`}>
-							<Button variant="primary">Editar</Button>
+							<button>Editar</button>
 						</Link>
-						<Button
+						<button
 							onClick={() => {
 								onDelete(note.id);
 								navigate('/');
 							}}
-							variant="outline-danger"
 						>
 							Eliminar
-						</Button>
+						</button>
 						<Link to="/">
-							<Button variant="outline-secondary">Regresar</Button>
+							<button>Regresar</button>
 						</Link>
-					</Stack>
-				</Col>
-			</Row>
+					</div>
+				</div>
+			</div>
 			<ReactMarkdown>{note.markdown}</ReactMarkdown>
 		</>
 	);

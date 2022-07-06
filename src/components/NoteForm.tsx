@@ -1,5 +1,4 @@
 import { FormEvent, useRef, useState } from 'react';
-import { Button, Col, Form, Row, Stack } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import CreatableReactSelect from 'react-select/creatable';
 import { NoteData, Tag } from '../App';
@@ -36,18 +35,18 @@ export function NoteForm({
 	}
 
 	return (
-		<Form onSubmit={handleSubmit}>
-			<Stack gap={4}>
-				<Row>
-					<Col>
-						<Form.Group controlId="title">
-							<Form.Label>Título</Form.Label>
-							<Form.Control required ref={titleRef} defaultValue={title} />
-						</Form.Group>
-					</Col>
-					<Col>
-						<Form.Group controlId="tags">
-							<Form.Label>Etiquetas</Form.Label>
+		<form onSubmit={handleSubmit}>
+			<div>
+				<div>
+					<div>
+						<div>
+							<label>Título</label>
+							<input required ref={titleRef} defaultValue={title} />
+						</div>
+					</div>
+					<div>
+						<div>
+							<label>Etiquetas</label>
 							<CreatableReactSelect
 								onCreateOption={label => {
 									const newTag = { id: uuidV4(), label };
@@ -69,34 +68,26 @@ export function NoteForm({
 								}}
 								isMulti
 							/>
-						</Form.Group>
-					</Col>
-				</Row>
-				<Form.Group controlId="markdown">
-					<Form.Label>Descripción</Form.Label>
-					<Form.Control
+						</div>
+					</div>
+				</div>
+				<div>
+					<label>Descripción</label>
+					<textarea
 						required
-						as="textarea"
 						rows={15}
 						ref={markdownRef}
 						style={{ resize: 'none' }}
 						defaultValue={markdown}
 					/>
-				</Form.Group>
-				<Stack direction="horizontal" gap={2} className="justify-content-end">
-					<Button type="submit" variant="primary">
-						Guardar
-					</Button>
+				</div>
+				<div className="justify-content-end">
+					<button type="submit">Guardar</button>
 					<Link to="..">
-						<Button type="button" variant="outline-secondary">
-							Cancelar
-						</Button>
+						<button type="button">Cancelar</button>
 					</Link>
-				</Stack>
-			</Stack>
-		</Form>
+				</div>
+			</div>
+		</form>
 	);
-}
-function uuidv4() {
-	throw new Error('Function not implemented.');
 }

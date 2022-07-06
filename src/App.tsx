@@ -1,12 +1,10 @@
 import { useMemo, useState } from 'react';
 import { useLocalStorage } from './useLocalStorage';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
 import { NewNote } from './pages/NewNote';
 import { v4 as uuidV4 } from 'uuid';
-import { NoteList } from './components/NoteList';
 import { NoteLayout } from './layouts/NoteLayout';
+import { NoteList } from './pages/NoteList';
 import { Note } from './pages/Note';
 import { EditNote } from './pages/EditNote';
 
@@ -92,7 +90,7 @@ function App() {
 	}
 
 	return (
-		<Container>
+		<div>
 			<Routes>
 				<Route
 					path="/"
@@ -118,7 +116,7 @@ function App() {
 				</Route>
 				<Route path="*" element={<Navigate to="/" />} />
 			</Routes>
-		</Container>
+		</div>
 	);
 }
 
