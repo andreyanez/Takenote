@@ -12,7 +12,7 @@ export function EditNote({ onSubmit, onAddTag, availableTags }: EditNoteProps) {
 	const note = useNote();
 	return (
 		<>
-			<h1 className="mb-4">Editar nota</h1>
+			<h1 className="md:text-left sm:text-center sm:text-6xl mb-6 md:text-2xl">Edita tu nota</h1>
 			<NoteForm
 				title={note.title}
 				markdown={note.markdown}

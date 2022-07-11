@@ -95,7 +95,9 @@ function App() {
 		<main>
 			<div className="title__container">
 				<div>
-					<h1 className="text-3xl font-bold">Takenote</h1>
+					<Link to="/">
+						<h1 className="text-3xl font-bold">Takenote</h1>
+					</Link>
 					<h2>Crea, guarda y revisa tus notas.</h2>
 				</div>
 				<div className="flex gap-2">

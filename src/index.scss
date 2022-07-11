@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-	--transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+	--transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
 	--bezier: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -13,7 +13,7 @@ body {
 }
 
 main {
-	@apply container mx-auto max-w-6xl;
+	@apply container mx-auto max-w-6xl px-6;
 }
 
 p {
