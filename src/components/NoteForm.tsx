@@ -11,7 +11,14 @@ type NoteFormProps = {
 	availableTags: Tag[];
 } & Partial<NoteData>;
 
-export function NoteForm({ onSubmit, onAddTag, availableTags, tags = [] }: NoteFormProps) {
+export function NoteForm({
+	onSubmit,
+	onAddTag,
+	availableTags,
+	title = '',
+	markdown = '',
+	tags = [],
+}: NoteFormProps) {
 	const titleRef = useRef<HTMLInputElement>(null);
 	const markdownRef = useRef<HTMLTextAreaElement>(null);
 	const [selectedTags, setSelectedTags] = useState<Tag[]>(tags);
@@ -34,13 +41,13 @@ export function NoteForm({ onSubmit, onAddTag, availableTags, tags = [] }: NoteF
 				<Row>
 					<Col>
 						<Form.Group controlId="title">
-							<Form.Label>Title</Form.Label>
-							<Form.Control required ref={titleRef} />
+							<Form.Label>Título</Form.Label>
+							<Form.Control required ref={titleRef} defaultValue={title} />
 						</Form.Group>
 					</Col>
 					<Col>
 						<Form.Group controlId="tags">
-							<Form.Label>Tags</Form.Label>
+							<Form.Label>Etiquetas</Form.Label>
 							<CreatableReactSelect
 								onCreateOption={label => {
 									const newTag = { id: uuidV4(), label };
@@ -66,22 +73,23 @@ export function NoteForm({ onSubmit, onAddTag, availableTags, tags = [] }: NoteF
 					</Col>
 				</Row>
 				<Form.Group controlId="markdown">
-					<Form.Label>Body</Form.Label>
+					<Form.Label>Descripción</Form.Label>
 					<Form.Control
 						required
 						as="textarea"
 						rows={15}
 						ref={markdownRef}
 						style={{ resize: 'none' }}
+						defaultValue={markdown}
 					/>
 				</Form.Group>
 				<Stack direction="horizontal" gap={2} className="justify-content-end">
 					<Button type="submit" variant="primary">
-						Save
+						Guardar
 					</Button>
 					<Link to="..">
 						<Button type="button" variant="outline-secondary">
-							Cancel
+							Cancelar
 						</Button>
 					</Link>
 				</Stack>
