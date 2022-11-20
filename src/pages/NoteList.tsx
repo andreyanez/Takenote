@@ -95,15 +95,20 @@ export function NoteList({ availableTags, notes, onUpdateTag, onDeleteTag }: Not
 				</div>
 			</form>
 			<div className="mt-9">
-				{notes ? (
+				{notes.length > 0 ? (
 					<ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 						{filteredNotes.map(note => (
 							<NoteCard key={note.id} id={note.id} title={note.title} tags={note.tags} />
 						))}
 					</ul>
 				) : (
-					<div className="flex justify-center pt-14">
-						<h3 className="text-3xl">Crea tu primera nota!</h3>
+					<div className="pt-14">
+						<h3 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
+							Bienvenid@!
+						</h3>
+						<p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
+							Crea tu primera nota para empezar.
+						</p>
 					</div>
 				)}
 			</div>
