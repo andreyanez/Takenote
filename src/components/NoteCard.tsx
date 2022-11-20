@@ -9,7 +9,7 @@ type SimplifiedNote = {
 
 export function NoteCard({ id, title, tags }: SimplifiedNote) {
 	return (
-		<li key={id} className=" note__card">
+		<li key={id} className="note__card">
 			<Link to={`/${id}`}>
 				<div className="w-full flex items-center justify-between p-6">
 					<div className="flex flex-col items-center gap-y-3 justify-center w-full">

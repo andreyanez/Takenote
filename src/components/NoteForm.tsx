@@ -37,8 +37,8 @@ export function NoteForm({
 	return (
 		<div className="max-w-2xl">
 			<form onSubmit={handleSubmit}>
-				<div className="flex gap-3 justify-between mb-8">
-					<div className="w-1/2">
+				<div className="flex gap-3  mb-8 flex-col md:flex-row md:justify-end md:gap-3 md:items-end">
+					<div className="md:w-1/2">
 						<label htmlFor="title" className="ml-px pl-4 block text-sm font-medium text-gray-700">
 							Título de Nota
 						</label>
@@ -53,7 +53,7 @@ export function NoteForm({
 							/>
 						</div>
 					</div>
-					<div className="w-1/2">
+					<div className="md:w-1/2">
 						<label htmlFor="tags" className="ml-px pl-4 block text-sm font-medium text-gray-700 ">
 							Etiquetas
 						</label>

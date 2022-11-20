@@ -43,8 +43,8 @@ export function NoteList({ availableTags, notes, onUpdateTag, onDeleteTag }: Not
 	return (
 		<>
 			<form>
-				<div className="flex justify-end gap-3 items-end">
-					<div className="w-1/4">
+				<div className="flex gap-y-3 flex-col md:flex-row md:justify-end md:gap-3 md:items-end">
+					<div className="md:w-1/4">
 						<label
 							htmlFor="title"
 							className="ml-px pl-4 block text-sm font-medium text-gray-700 sr-only"
@@ -63,7 +63,7 @@ export function NoteList({ availableTags, notes, onUpdateTag, onDeleteTag }: Not
 							/>
 						</div>
 					</div>
-					<div className="w-1/4">
+					<div className="md:w-1/4">
 						<label
 							htmlFor="etiqueta"
 							className="ml-px pl-4 block text-sm font-medium text-gray-700 sr-only"

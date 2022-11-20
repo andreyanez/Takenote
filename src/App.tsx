@@ -94,13 +94,13 @@ function App() {
 	return (
 		<main>
 			<div className="title__container">
-				<div>
+				<div className="text-center md:text-left">
 					<Link to="/">
 						<h1 className="text-3xl font-bold">Takenote</h1>
 					</Link>
 					<h2>Crea, guarda y revisa tus notas.</h2>
 				</div>
-				<div className="flex gap-2">
+				<div className="flex gap-2 md:mt-0 mt-5 justify-center md:justify-start">
 					<Link to="/new">
 						<button
 							type="button"
