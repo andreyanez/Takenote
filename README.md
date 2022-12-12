@@ -17,7 +17,6 @@ This app is intended to be a on-the-go note-taking solution on the browser, with
 Esta aplicación pretende ser una solución para tomar notas en el navegador, sin necesidad de descargar otra aplicación para tomar notas.
 
 ## Optimizations
-*(optional)*
 
 As possible features, the app could include/ Como posibles features, el app podría incluir:
 - Image upload support / Soporte para subir imágenes
