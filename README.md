@@ -8,7 +8,7 @@ App para apunte de notas con sporte para markdown hecho con React, Typescript y 
 
 ![takenote](https://user-images.githubusercontent.com/39743205/206944699-fd7a746f-643d-4696-8a30-050ddba992fe.JPG)
 
-## How It's Made:
+## Description/Descripción:
 
 **Tech used:** Vite, React, Typescript, TailwindCSS
 
