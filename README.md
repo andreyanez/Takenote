@@ -1,6 +1,7 @@
 # Takenote
 
-Markdown-supported note taking app using React, Typescript and TailwindCSS
+Markdown-supported note taking app using React, Typescript and TailwindCSS.
+
 App para apunte de notas con sporte para markdown hecho con React, Typescript y TailwindCSS
 
 **Link to project/Link del proyecto:** https://apptakenote.netlify.app/
